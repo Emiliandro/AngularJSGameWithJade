@@ -1,0 +1,70 @@
+
+
+<div class="container">
+        <!-- CONTROLLER -->
+        <div class="jumbotron mt-3">
+            <!-- VIDA DOS PERSONAGENS -->
+           <div class="row" id="lifeBars">
+              <div class="col-sm text-center border p-3" id="PlayerLifeBar">
+                 
+              </div>
+              <div class="col-sm text-center border p-3" id="MonsterLifeBar">
+                 
+              </div>
+           </div>
+           <!-- COMANDOS DO JOGADOR -->
+           <div class="row p-3">
+              <div class="col text-center">
+                 <h3> Comandos </h3>
+                 <p id="gameInputsAlert"></p> 
+              </div>
+           </div>
+           <div class="row p-3" id="comandos">
+                <div id="btnAtaque" class="col text-center  btn-primary p-3">
+                    Ataque
+                </div>
+                <div id="btnAtaqueEsp"  class="col text-center  btn-danger p-3">
+                    Ataque Especial
+                </div>
+                <div id="btnCura"  class="col text-center  btn-success p-3">
+                    Curar
+                </div>
+                <div id="btnDesistir"  class="col text-center  btn-dark p-3">
+                    Desistir
+                </div>
+           </div>
+           <!-- JOGO -->
+           <div class="row p-3">
+                <div class="col text-center">
+                   <h3> LOG </h3>
+                </div>
+            </div>
+            <div class="p-3" id="log">
+
+                    <!-- REGISTRO DO JOGO -->
+            </div>
+
+            <div class="row p-3">
+                <div class="col text-center">
+                   <h3 id="roundAtual"></h3>
+                </div>
+             </div>
+        </div>
+     </div>
+
+     <!-- ----------------------------------  -->
+     <!-- --------  models de jogo ---------  -->
+     <!-- ----------------------------------  -->
+     <script src="../js/Personagem.js"></script>
+     <script src="../js/BarraDeHP.js"></script>
+     <script src="../js/ExportedAPI.js"></script>
+     <script src="../js/LogDeJogo.js"></script>
+     <script src="../js/Round.js"></script>
+     
+     <!-- ----------------------------------  -->
+     <!-- -----  controller de jogo --------  -->
+     <!-- ----------------------------------  -->
+
+     <script src="../main.js"></script>
+     
+     

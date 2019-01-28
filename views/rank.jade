@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .container
+    .jumbotron.mt-3
+      table#TabelaDeResultados.table
+        thead.thead-dark
+          tr
+            th Jogador
+            th Horário
+            th Resultado
+        // CONTROLLER
+        tbody(ng-controller='LeituraResultados')
+          // OBJETOS
+          tr(ng-repeat='jogador in jogadores')
+            td {{jogador.playerName}}
+            td {{jogador.data}}
+            td {{jogador.score}}
+          // EASTER EGG APARECE EM CASO DE ERRO
+

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="jumbotron mt-3">
+      <table class="table" id="TabelaDeResultados">
+        <thead class="thead-dark">
+            <tr>
+              <th>Jogador</th>
+              <th>Horário</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <!-- CONTROLLER     -->
+          <tbody ng-controller="LeituraResultados">
+            <!-- OBJETOS -->
+            
+            <tr ng-repeat="jogador in jogadores">
+              <td>{{jogador.playerName}}</td>
+              <td>{{jogador.data}}</td>
+              <td>{{jogador.score}}</td>
+            </tr>
+
+            <!-- EASTER EGG APARECE EM CASO DE ERRO -->
+            
+          </tbody>
+      </table>
+    </div>
+</div>

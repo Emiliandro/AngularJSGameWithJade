@@ -1,0 +1,50 @@
+#PlayerLifeBar, #MonsterLifeBar, #comandos .col, #btnComecarJogo {
+  transition: all 0.4s ease-in;
+}
+#log {
+  background-color: #333;
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+#PlayerLifeBar, #MonsterLifeBar {
+  background-color: greenyellow;
+}
+#PlayerLifeBar.final, #MonsterLifeBar.final {
+  background-color: crimson;
+}
+#log .action.player {
+  color: forestgreen;
+}
+#log .action.monstro {
+  color: crimson;
+}
+#log .action {
+  background-color: aliceblue;
+  margin: 4px;
+}
+#comandos .col, #btnComecarJogo {
+  margin: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.0), 0 3px 1px -2px rgba(0, 0, 0, 0.0), 0 1px 5px 0 rgba(0, 0, 0, 0.0);
+}
+#comandos .col:hover, #btnComecarJogo:hover {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+#comandos.final div {
+  display: none;
+}
+#gameInputsAlert.final {
+  background-color: blanchedalmond;
+  padding: 10px;
+}
+#lifeBars .col-sm {
+  margin: 4px;
+}
+#pontosNoJogo {
+  margin: 4px;
+  padding: 4px;
+}
+#TelaComecarJogo.desativo, #TelaJogarJogo.desativo, #TelaPerdeuJogo.desativo, #TelaEnviarResultado.desativo {
+  display: none;
+}

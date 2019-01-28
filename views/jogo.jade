@@ -1,0 +1,84 @@
+extends layout
+
+block content
+
+  .container#TelaComecarJogo
+    .jumbotron.mt-3
+      p.lead Seja bem vindo! Se estiver pronto para começar aperte o botão abaixo.
+      p.lead.btn-danger.pad-3.text-center#btnComecarJogo comecar
+
+
+  .container#TelaJogarJogo
+    //- include app.html
+    
+    // CONTROLLER
+    .jumbotron.mt-3
+      // VIDA DOS PERSONAGENS
+      #lifeBars.row
+        #PlayerLifeBar.col-sm.text-center.border.p-3
+        #MonsterLifeBar.col-sm.text-center.border.p-3
+      // COMANDOS DO JOGADOR
+      .row.p-3
+        .col.text-center
+          h3  Comandos 
+          p#gameInputsAlert
+      #comandos.row.p-3
+        #btnAtaque.col.text-center.btn-primary.p-3
+          | Ataque
+        #btnAtaqueEsp.col.text-center.btn-danger.p-3
+          | Ataque Especial
+        #btnCura.col.text-center.btn-success.p-3
+          | Curar
+        #btnDesistir.col.text-center.btn-dark.p-3
+          | Desistir
+      // JOGO
+      .row.p-3
+        .col.text-center
+          h3  LOG 
+      #log.p-3
+        // REGISTRO DO JOGO
+      .row.p-3
+        .col.text-center
+          h3#roundAtual
+
+  .container#TelaPerdeuJogo
+    .jumbotron.mt-3
+      p.lead Infelizmente essa história tem um final triste, pois o monstro venceu.
+      p.lead
+        a(href='/jogo') Tente Novamente!
+
+
+  .container#TelaEnviarResultado(ng-controller='EnvioDeResultados')
+    form.jumbotron.mt-3(novalidate, name="formulario")
+      .row
+        h2 Obrigado por jogar
+      hr
+      .row
+        .input-group.mb-3
+          .input-group-prepend
+            span#basic-addon1.input-group-text @
+          input.form-control(ng-required="true", ng-model='jogador.playerName', ng-maxlength="15", ng-minlength="2" type='text', name='NomeDoPlayer', placeholder='Por favor, diga seu nome!', aria-label='Por favor, diga seu nome!', aria-describedby='basic-addon1')
+      p.alert-danger.pad-3(ng-show="formulario.NomeDoPlayer.$error.maxlength") O nome do jogador deve ser no máximo de 15 caracteres, verifique se houve um erro!
+
+
+      #pontosNoJogo.row
+          p.lead
+            i {{ jogador.playerName }} 
+            |sua pontuação foi de  
+            b 400 Pontos
+      input(ng-hide="formulario.NomeDoPlayer.$error.maxlength" ,ng-click='enviardados()',type="submit", value=" Enviar ", name="EnviarPontuacao").col.btn-primary.row.rounded
+
+  // ----------------------------------
+  // --------  models de jogo ---------
+  // ----------------------------------
+  script(src='../js/Personagem.js')
+  script(src='../js/BarraDeHP.js')
+  script(src='../js/ExportedAPI.js')
+  script(src='../js/LogDeJogo.js')
+  script(src='../js/Round.js')
+  script(src='../js/EstadosJogo.js')
+  // ----------------------------------
+  // -----  controller de jogo --------
+  // ----------------------------------
+  script(src='../main.js')
+
